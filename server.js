@@ -1,10 +1,12 @@
-const http = require('http')
-const fs = require('fs')
-http.createServer((req, res) => {
-  fs.readFile('index.html', (err, data) => {
-    res.writeHead(200, {'Content-Type': 'text/html'})
-    res.write(data)
-    res.end()
-  })
-  fs.readFile
-}).listen(8000)
+const express = require('express');
+const app = express()
+const port = 8002
+
+app.use(express.static('public'))
+
+
+
+
+app.listen(port, ()=> {
+  console.log(`Server running at http://localhost:${port}`)
+})
